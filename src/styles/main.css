@@ -53,7 +53,7 @@ h2{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    transform-style: preserv-3d;
+    transform-style: preserve-3d;
     perspective: 500px;
 }
 
