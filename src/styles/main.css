@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FC1E8A;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+        325deg,
+        #03001E 0%, #7303C0 30%,
+        #EC38BC 70%, #FDEFF9 100%
+    );
+    padding: 40px 60px;
+}
