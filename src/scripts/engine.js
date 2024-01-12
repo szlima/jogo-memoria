@@ -9,6 +9,7 @@ const emojis= [
     "🐬", "🐬"
 ];
 let openCards= [];
+let startGame;
 
 let shuffleEmojis= emojis.sort(() =>
     (Math.random() > 0.5 ? 2 : -1)
@@ -23,6 +24,10 @@ for(let i=0; i<emojis.length; i++){
 }
 
 function handleClick(){
+
+    if(!startGame)
+        startGame= (new Date()).getTime();
+
     if(openCards.length < 2){
         this.classList.add("boxOpen");
         openCards.push(this);
@@ -30,6 +35,23 @@ function handleClick(){
 
     if(openCards.length == 2)
         setTimeout(checkMatch, 500);
+}
+
+function gameOver(){
+    const endGame= (new Date()).getTime();
+    const diff= endGame - startGame;
+
+    const seconds= 1000;
+    const minutes= seconds * 60;
+    const hours= minutes * 60;
+
+    const duration= Math.round(diff/hours) > 0 ?
+                        `mais de 1 hora` :
+                        Math.round(diff/minutes) > 0 ?
+                            `${Math.round(diff/minutes)} minutos` :
+                            `${Math.round(diff/seconds)} segundos`;
+
+    alert(`Você venceu! Você demorou ${duration}!`);
 }
 
 function checkMatch(){
@@ -44,5 +66,5 @@ function checkMatch(){
     openCards= [];
 
     if(document.querySelectorAll(".boxMatch").length == emojis.length)
-        alert("Você venceu!");
+        gameOver();
 }
