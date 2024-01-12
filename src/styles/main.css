@@ -80,6 +80,10 @@ h2{
     backface-visibility: hidden;
 }
 
+.item:hover{
+    cursor: pointer;
+}
+
 .item.boxOpen{
     transform: rotateY(0deg);
 }
@@ -87,4 +91,12 @@ h2{
 .boxOpen::after,
 .boxMatch::after{
     transform: rotateY(180deg);
+}
+
+.boxOpen:hover{
+    cursor: not-allowed;
+}
+
+.boxMatch{
+    background-color: #fcf3e3;
 }

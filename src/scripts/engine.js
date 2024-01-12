@@ -24,9 +24,11 @@ for(let i=0; i<emojis.length; i++){
 }
 
 function handleClick(){
-
     if(!startGame)
         startGame= (new Date()).getTime();
+
+    if(this.classList.contains("boxOpen"))
+        return;
 
     if(openCards.length < 2){
         this.classList.add("boxOpen");
