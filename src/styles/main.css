@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #FC1E8A;
+    background-color: #B67806;
     user-select: none;
 }
 
@@ -16,15 +16,15 @@ body{
     gap: 30px;
     background: linear-gradient(
         325deg,
-        #03001E 0%, #7303C0 30%,
-        #EC38BC 70%, #FDEFF9 100%
+        #FFF 0%, #B3FF5C  30%,
+        #63B900 70%, #000 100%
     );
     padding: 40px 60px;
 }
 
 h2{
     font-size: 3em;
-    color: #fff;
+    color: #FFF;
     text-transform: uppercase;
     letter-spacing: .1em;
 }
@@ -32,8 +32,8 @@ h2{
 .reset{
     padding: 15px 20px;
     width: 100%;
-    color: #000;
-    background-color: #fff;
+    color: #7E570E;
+    background-color: #FFF;
     border: none;
     font-size: 1.5em;
     letter-spacing: .1em;
@@ -43,12 +43,11 @@ h2{
 }
 
 .reset:focus{
-    color: #EC38BC;
-    background-color: #262809;
+    color: #FFF;
+    background-color: #7E570E;
 }
 
 .game{
-    border: 1px solid red;
     width: 430px;
     height: 430px;
     display: flex;
@@ -75,7 +74,7 @@ h2{
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #404040;
+    background-color: #7E570E;
     transition: .25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
