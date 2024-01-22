@@ -67,6 +67,7 @@ h2{
     background-color: #FFF;
     font-size: 4em;
     transform: rotateY(180deg);
+    -moz-transform: rotateY(0deg);
     transition: .25s;
 }
 
@@ -86,11 +87,13 @@ h2{
 
 .item.boxOpen{
     transform: rotateY(0deg);
+    -moz-transform: rotateY(180deg);
 }
 
 .boxOpen::after,
 .boxMatch::after{
     transform: rotateY(180deg);
+    -moz-transform: rotateY(0deg);
 }
 
 .boxOpen:hover{
