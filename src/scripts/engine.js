@@ -1,27 +1,13 @@
-const emojis= [
-    "🐕", "🐕",
-    "🦜", "🦜",
-    "🐎", "🐎",
-    "🐇", "🐇",
-    "🦒", "🦒",
-    "🦋", "🦋",
-    "🐢", "🐢",
-    "🐬", "🐬"
+const data= [
+    "🐕", "🦜", "🐎", "🐇",
+    "🦒", "🦋", "🐢", "🐬",
+    "🐅", "🐜", "🐫", "🐘",
+    "🐿️", "🦚", "🕊️", "🐙"
 ];
+
+let emojis= [];
 let openCards= [];
 let startGame;
-
-let shuffleEmojis= emojis.sort(() =>
-    (Math.random() > 0.5 ? 2 : -1)
-);
-
-for(let i=0; i<emojis.length; i++){
-    let box= document.createElement("div");
-    box.classList.add("item");
-    box.innerHTML= shuffleEmojis[i];
-    box.onclick= handleClick;
-    document.querySelector(".game").appendChild(box);
-}
 
 function handleClick(){
     if(!startGame)
@@ -70,3 +56,19 @@ function checkMatch(){
     if(document.querySelectorAll(".boxMatch").length == emojis.length)
         gameOver();
 }
+
+function drawCards(length){
+    emojis= [...data.slice(0, length), ...data.slice(0, length)].sort(() =>
+        (Math.random() > 0.5 ? 2 : -1)
+    );
+
+    for(let i=0; i<emojis.length; i++){
+        let box= document.createElement("div");
+        box.classList.add("item");
+        box.innerHTML= emojis[i];
+        box.onclick= handleClick;
+        document.querySelector(".game").appendChild(box);
+    }
+}
+
+drawCards(8);
