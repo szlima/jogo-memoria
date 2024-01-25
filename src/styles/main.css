@@ -2,6 +2,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     min-height: 100vh;
     background-color: #B67806;
     user-select: none;
@@ -49,7 +50,7 @@ h2{
 
 .game{
     width: 430px;
-    height: 430px;
+    min-height: 430px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -102,4 +103,25 @@ h2{
 
 .boxMatch{
     background-color: #fcf3e3;
+}
+
+.optionStartGame{
+    width: 200px;
+    height: 200px;
+    background-color: yellowgreen;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.optionStartGame:hover{
+    background-color: greenyellow;
+    color: #333;
+    cursor: pointer;
+}
+
+.invisible{
+    display: none;
 }

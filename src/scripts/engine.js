@@ -71,4 +71,22 @@ function drawCards(length){
     }
 }
 
-drawCards(8);
+function init(){
+
+    for(let i=0; i<3; i++){
+        const length= 8 + (i*4);
+        const option= document.createElement("div");
+        option.classList.add("optionStartGame");
+        option.innerText= `${length} pares`;
+        option.onclick= () => {
+            document.querySelector(".container").classList.remove("invisible");
+            document.querySelectorAll(".optionStartGame").forEach(optionDiv =>
+                optionDiv.classList.add("invisible")
+            );
+            drawCards(length);
+        };
+        document.querySelector("body").appendChild(option);
+    }
+}
+
+init();
