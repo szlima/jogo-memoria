@@ -69,6 +69,7 @@ function drawCards(length){
         box.onclick= handleClick;
         document.querySelector(".game").appendChild(box);
     }
+    document.querySelector(".game").classList.add(`level-${(length-4)/4}`);
 }
 
 function init(){

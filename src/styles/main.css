@@ -49,13 +49,24 @@ h2{
 }
 
 .game{
-    width: 430px;
     min-height: 430px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
+}
+
+.level-1{
+    width: 430px;
+}
+
+.level-2{
+    width: 650px;
+}
+
+.level-3{
+    width: 870px;
 }
 
 .item{
