@@ -4,7 +4,7 @@ body{
     align-items: center;
     gap: 20px;
     min-height: 100vh;
-    background-color: #B67806;
+    background-color: #213F0B;
     user-select: none;
 }
 
@@ -17,15 +17,15 @@ body{
     gap: 30px;
     background: linear-gradient(
         325deg,
-        #FFF 0%, #B3FF5C  30%,
-        #63B900 70%, #000 100%
+        #FFF 0%, #7DCB45  30%,
+        #FFF 100%
     );
     padding: 40px 60px;
 }
 
 h2{
     font-size: 3em;
-    color: #FFF;
+    color: #FE2916;
     text-transform: uppercase;
     letter-spacing: .1em;
 }
@@ -33,8 +33,8 @@ h2{
 .reset{
     padding: 15px 20px;
     width: 100%;
-    color: #7E570E;
-    background-color: #FFF;
+    color: #FFF;
+    background-color: #213F0B;
     border: none;
     font-size: 1.5em;
     letter-spacing: .1em;
@@ -43,9 +43,13 @@ h2{
     font-weight: 600;
 }
 
+.reset:hover{
+    color: #213F0B;
+    background-color: #D9F8C3;
+}
+
 .reset:focus{
-    color: #FFF;
-    background-color: #7E570E;
+    background: #FFF;
 }
 
 .game{
@@ -87,7 +91,7 @@ h2{
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #7E570E;
+    background-color: #FE5849;
     transition: .25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
@@ -113,7 +117,7 @@ h2{
 }
 
 .boxMatch{
-    background-color: #fcf3e3;
+    background-color: #E3E3E3;
 }
 
 .optionStartGame{
