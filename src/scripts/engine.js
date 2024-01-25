@@ -39,8 +39,9 @@ function gameOver(){
                             `${Math.round(diff/minutes)} minutos` :
                             `${Math.round(diff/seconds)} segundos`;
 
-    alert(`Você venceu! Você demorou ${duration}!`);
     document.querySelector(".container").classList.add("gameOver");
+    document.querySelector(".container p").innerText= `Você demorou ${duration}!`;
+    document.querySelector("button").innerText= "JOGAR NOVAMENTE";
 }
 
 function checkMatch(){

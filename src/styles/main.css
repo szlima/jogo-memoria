@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
     background: linear-gradient(
         325deg,
         #FFF 0%, #7DCB45  30%,
@@ -29,6 +29,10 @@ h2{
     color: #FE2916;
     text-transform: uppercase;
     letter-spacing: .1em;
+}
+
+p{
+    color: #FE5849;
 }
 
 .reset{
