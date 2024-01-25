@@ -21,6 +21,7 @@ body{
         #FFF 100%
     );
     padding: 40px 60px;
+    transition: 1s;
 }
 
 h2{
@@ -139,4 +140,15 @@ h2{
 
 .invisible{
     display: none;
+}
+
+.gameOver{
+    transform: rotateY(720deg);
+    -moz-transform: rotateY(720deg);
+    box-shadow: inset 0 0 20px 10px #FFF,
+        0 0 30px 20px #FFF;
+}
+
+.gameOver .boxMatch{
+    border: 2px solid #FFF;
 }

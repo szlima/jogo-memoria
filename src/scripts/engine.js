@@ -40,6 +40,7 @@ function gameOver(){
                             `${Math.round(diff/seconds)} segundos`;
 
     alert(`Você venceu! Você demorou ${duration}!`);
+    document.querySelector(".container").classList.add("gameOver");
 }
 
 function checkMatch(){
