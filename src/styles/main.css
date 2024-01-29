@@ -15,11 +15,6 @@ body{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(
-        325deg,
-        #FFF 0%, #7DCB45  30%,
-        #FFF 100%
-    );
     padding: 40px 60px;
     transition: 1s;
 }
@@ -36,6 +31,7 @@ p{
 }
 
 .reset{
+    display: none;
     padding: 15px 20px;
     width: 100%;
     color: #FFF;
@@ -59,10 +55,8 @@ p{
 }
 
 .game{
+    display: none;
     min-height: 430px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
 }
@@ -126,7 +120,14 @@ p{
     background-color: #E3E3E3;
 }
 
-.optionStartGame{
+.containerStartGame{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.optionStart{
     width: 200px;
     height: 200px;
     background-color: yellowgreen;
@@ -137,14 +138,10 @@ p{
     font-size: 2rem;
 }
 
-.optionStartGame:hover{
+.optionStart:hover{
     background-color: greenyellow;
     color: #333;
     cursor: pointer;
-}
-
-.invisible{
-    display: none;
 }
 
 .gameOver{
@@ -156,4 +153,26 @@ p{
 
 .gameOver .boxMatch{
     border: 2px solid #FFF;
+}
+
+.started{
+    background: linear-gradient(
+        325deg,
+        #FFF 0%, #7DCB45  30%,
+        #FFF 100%
+    );
+}
+
+.started .game{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.started .reset{
+    display: block;
+}
+
+.started .containerStartGame{
+    display: none;
 }

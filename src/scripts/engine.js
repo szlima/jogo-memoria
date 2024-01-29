@@ -12,7 +12,7 @@ let startGame;
 function handleClick(){
     if(!startGame){
         startGame= (new Date()).getTime();
-        document.querySelector("button").style.visibility= "visible";
+        document.querySelector(".reset").style.visibility= "visible";
     }
 
     if(this.classList.contains("boxOpen"))
@@ -43,7 +43,7 @@ function gameOver(){
 
     document.querySelector(".container").classList.add("gameOver");
     document.querySelector(".container p").innerText= `Você demorou ${duration}!`;
-    document.querySelector("button").innerText= "JOGAR NOVAMENTE";
+    document.querySelector(".reset").innerText= "JOGAR NOVAMENTE";
 }
 
 function checkMatch(){
@@ -78,20 +78,15 @@ function drawCards(length){
 
 function init(){
 
-    for(let i=0; i<3; i++){
+    document.querySelectorAll(".optionStart").forEach((option, i) => {
         const length= 8 + (i*4);
-        const option= document.createElement("div");
-        option.classList.add("optionStartGame");
         option.innerText= `${length} pares`;
         option.onclick= () => {
-            document.querySelector(".container").classList.remove("invisible");
-            document.querySelectorAll(".optionStartGame").forEach(optionDiv =>
-                optionDiv.classList.add("invisible")
-            );
+            document.querySelector(".container").classList.add("started");
+            document.querySelector(".container p").innerText= "";
             drawCards(length);
         };
-        document.querySelector("body").appendChild(option);
-    }
+    });
 }
 
 init();
