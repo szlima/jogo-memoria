@@ -46,6 +46,7 @@ p{
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    visibility: hidden;
 }
 
 .reset:hover{

@@ -10,8 +10,10 @@ let openCards= [];
 let startGame;
 
 function handleClick(){
-    if(!startGame)
+    if(!startGame){
         startGame= (new Date()).getTime();
+        document.querySelector("button").style.visibility= "visible";
+    }
 
     if(this.classList.contains("boxOpen"))
         return;
