@@ -1,92 +1,133 @@
-const data= [
-    "🐕", "🦜", "🐎", "🐇",
-    "🦒", "🦋", "🐢", "🐬",
-    "🐅", "🐜", "🐫", "🐘",
-    "🐿️", "🦚", "🕊️", "🐙"
+
+const body= document.querySelector('body');
+const displayInfo= document.querySelector('#display--info');
+const displayMenuOptions= document.querySelectorAll('.menu__option');
+const displayBoard= document.querySelector('#display--board');
+const buttonRestart= document.querySelector('#button--restart');
+
+const EMOJIS= [
+    '🐕', '🦜', '🐎', '🐇',
+    '🦒', '🦋', '🐢', '🐬',
+    '🐅', '🐜', '🐫', '🐘',
+    '🐿️', '🦚', '🕊️', '🐙'
 ];
 
-let emojis= [];
-let openCards= [];
-let startGame;
+let cardArray= [];
+let currentCardPair= [];
+let gameStartTime;
 
-function handleClick(){
-    if(!startGame){
-        startGame= (new Date()).getTime();
-        document.querySelector("#button--restart").style.visibility= "visible";
-    }
+// ---------- ----------
 
-    if(this.classList.contains("boxOpen"))
-        return;
+buttonRestart.onclick= () => location.reload();
 
-    if(openCards.length < 2){
-        this.classList.add("boxOpen");
-        openCards.push(this);
-    }
+const getCurrentTime= () => (new Date()).getTime();
 
-    if(openCards.length == 2)
-        setTimeout(checkMatch, 500);
-}
-
-function gameOver(){
-    const endGame= (new Date()).getTime();
-    const diff= endGame - startGame;
+const endGame= () => {
+    const gameEndTime= getCurrentTime();
+    const diffTime= gameEndTime - gameStartTime;
 
     const seconds= 1000;
     const minutes= seconds * 60;
     const hours= minutes * 60;
 
-    const duration= Math.round(diff/hours) > 0 ?
-                        `mais de 1 hora` :
-                        Math.round(diff/minutes) > 0 ?
-                            `${Math.round(diff/minutes)} minutos` :
-                            `${Math.round(diff/seconds)} segundos`;
+    const gameDuration= Math.round(diffTime/hours) > 0 ?
+        `mais de 1 hora` :
+        Math.round(diffTime/minutes) > 0 ?
+            `${Math.round(diffTime/minutes)} minutos` :
+            `${Math.round(diffTime/seconds)} segundos`;
 
-    document.querySelector(".container").classList.add("gameOver");
-    document.querySelector("#display--info").innerText= `Você demorou ${duration}!`;
-    document.querySelector("#button--restart").innerText= "JOGAR NOVAMENTE";
+    body.classList.add('gameOver');
+    displayInfo.innerText= `Você demorou ${gameDuration}!`;
+    buttonRestart.innerText= 'JOGAR NOVAMENTE';
+};
+
+const areAllCardsFlipped= () => {
+    const displayMatchedCards= document.querySelectorAll('.boxMatch');
+    return (displayMatchedCards.length === cardArray.length);
+};
+
+const cancelCurrentPair= (cardOne, cardTwo) => {
+    cardOne.classList.remove('boxOpen');
+    cardTwo.classList.remove('boxOpen');
 }
 
-function checkMatch(){
-    if(openCards[0].innerHTML === openCards[1].innerHTML){
-        openCards[0].classList.add("boxMatch");
-        openCards[1].classList.add("boxMatch");
-    }else{
-        openCards[0].classList.remove("boxOpen");
-        openCards[1].classList.remove("boxOpen");
+const keepCurrentPair= (cardOne, cardTwo) => {
+    cardOne.classList.add('boxMatch');
+    cardTwo.classList.add('boxMatch');
+}
+
+const checkMatch= () => {
+    const [cardOne, cardTwo]= [...currentCardPair];
+
+    if(cardOne.innerHTML === cardTwo.innerHTML)
+        keepCurrentPair(cardOne, cardTwo);
+    else
+        cancelCurrentPair(cardOne, cardTwo);
+
+    currentCardPair= [];
+
+    if(areAllCardsFlipped())
+        endGame();
+};
+
+const canCheckMatch= () => (currentCardPair.length === 2);
+
+const canFlipCard= () => (currentCardPair.length < 2);
+
+const flipCard= e => {
+    const card= e.target;
+
+    if(!gameStartTime){
+        gameStartTime= getCurrentTime();
+        buttonRestart.style.visibility= 'visible';
     }
 
-    openCards= [];
+    if(card.classList.contains('boxOpen'))
+        return;
 
-    if(document.querySelectorAll(".boxMatch").length == emojis.length)
-        gameOver();
-}
+    if(canFlipCard()){
+        card.classList.add('boxOpen');
+        currentCardPair.push(card);
+    }
 
-function drawCards(length){
-    emojis= [...data.slice(0, length), ...data.slice(0, length)].sort(() =>
+    if(canCheckMatch())
+        setTimeout(checkMatch, 500);
+};
+
+const getEmojis= length => {
+    return [...EMOJIS.slice(0, length), ...EMOJIS.slice(0, length)].sort(() =>
         (Math.random() > 0.5 ? 2 : -1)
     );
+};
 
-    for(let i=0; i<emojis.length; i++){
-        let box= document.createElement("div");
-        box.classList.add("item");
-        box.innerHTML= emojis[i];
-        box.onclick= handleClick;
-        document.querySelector("#display--board").appendChild(box);
-    }
-    document.querySelector("#display--board").classList.add(`level-${(length-4)/4}`);
-}
+const drawCards= length => {
+    cardArray= getEmojis(length);
 
-function init(){
+    cardArray.forEach(emoji => {
+        let card= document.createElement('div');
+        card.classList.add('item');
+        card.innerHTML= emoji;
+        card.onclick= flipCard;
+        displayBoard.appendChild(card);
+    });
 
-    document.querySelectorAll(".menu__option").forEach((option, i) => {
+    displayBoard.classList.add(`level-${(length-4)/4}`);
+};
+
+const startGame= length => {
+    body.classList.add('started');
+    displayInfo.innerText= '';
+    drawCards(length);
+};
+
+const init= () => {
+    displayMenuOptions.forEach((option, i) => {
         const length= 8 + (i*4);
         option.innerText= `${length} pares`;
-        option.onclick= () => {
-            document.querySelector(".container").classList.add("started");
-            document.querySelector("#display--info").innerText= "";
-            drawCards(length);
-        };
+        option.onclick= () => startGame(length);
     });
-}
+};
+
+// ---------- ----------
 
 init();
