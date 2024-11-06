@@ -10,17 +10,17 @@
 </head>
 <body>
     <div class="container">
-        <h2>JOGO DA MEMÓRIA</h2>
-        <p>Selecione o nível de dificuldade</p>
+        <h1 class="header__heading">Jogo da memória</h1>
+        <p id="display--info" class="header__info">Selecione o nível de dificuldade</p>
 
-        <div class="containerStartGame">
-            <div class="optionStart"></div>
-            <div class="optionStart"></div>
-            <div class="optionStart"></div>
+        <div class="main__menu">
+            <div class="menu__option"></div>
+            <div class="menu__option"></div>
+            <div class="menu__option"></div>
         </div>
 
-        <div class="game"></div>
-        <button class="reset" onclick="window.location.reload()">
+        <div id="display--board" class="game__board"></div>
+        <button id="button--restart" class="game__restart" onclick="window.location.reload()">
             RECOMEÇAR
         </button>
     </div>

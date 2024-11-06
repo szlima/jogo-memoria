@@ -19,7 +19,7 @@ body{
     transition: 1s;
 }
 
-h2{
+.header__heading{
     font-size: 3em;
     color: #FE2916;
     text-transform: uppercase;
@@ -27,11 +27,11 @@ h2{
     text-align: center;
 }
 
-p{
+.header__info{
     color: #FE5849;
 }
 
-.reset{
+.game__restart{
     display: none;
     padding: 10px 20px;
     width: 100%;
@@ -46,16 +46,16 @@ p{
     visibility: hidden;
 }
 
-.reset:hover{
+.game__restart:hover{
     color: #213F0B;
     background-color: #D9F8C3;
 }
 
-.reset:focus{
+.game__restart:focus{
     background: #FFF;
 }
 
-.game{
+.game__board{
     display: none;
     transform-style: preserve-3d;
     perspective: 500px;
@@ -120,14 +120,14 @@ p{
     background-color: #E3E3E3;
 }
 
-.containerStartGame{
+.main__menu{
     display: flex;
     justify-content: space-evenly;
     gap: 30px;
     margin-top: 20px;
 }
 
-.optionStart{
+.menu__option{
     width: 200px;
     height: 200px;
     background-color: yellowgreen;
@@ -138,7 +138,7 @@ p{
     font-size: 2rem;
 }
 
-.optionStart:hover{
+.menu__option:hover{
     background-color: greenyellow;
     color: #333;
     cursor: pointer;
@@ -163,18 +163,18 @@ p{
     );
 }
 
-.started .game{
+.started .game__board{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.started .reset{
+.started .game__restart{
     display: block;
 }
 
-.started .containerStartGame{
+.started .main__menu{
     display: none;
 }
 
@@ -185,7 +185,7 @@ p{
         font-size: 10px;
     }
 
-    .optionStart{
+    .menu__option{
         width: 150px;
         height: 100px;
     }
@@ -195,7 +195,7 @@ p{
         height: 100%;
     }
 
-    .started .game{
+    .started .game__board{
         width: 100%;
         gap: 1px;
     }
@@ -207,7 +207,7 @@ p{
         padding: 40px 0;
     }
 
-    .containerStartGame{
+    .main__menu{
         flex-direction: column;
         gap: 10px;
     }

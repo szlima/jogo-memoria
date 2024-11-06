@@ -12,7 +12,7 @@ let startGame;
 function handleClick(){
     if(!startGame){
         startGame= (new Date()).getTime();
-        document.querySelector(".reset").style.visibility= "visible";
+        document.querySelector("#button--restart").style.visibility= "visible";
     }
 
     if(this.classList.contains("boxOpen"))
@@ -42,8 +42,8 @@ function gameOver(){
                             `${Math.round(diff/seconds)} segundos`;
 
     document.querySelector(".container").classList.add("gameOver");
-    document.querySelector(".container p").innerText= `Você demorou ${duration}!`;
-    document.querySelector(".reset").innerText= "JOGAR NOVAMENTE";
+    document.querySelector("#display--info").innerText= `Você demorou ${duration}!`;
+    document.querySelector("#button--restart").innerText= "JOGAR NOVAMENTE";
 }
 
 function checkMatch(){
@@ -71,19 +71,19 @@ function drawCards(length){
         box.classList.add("item");
         box.innerHTML= emojis[i];
         box.onclick= handleClick;
-        document.querySelector(".game").appendChild(box);
+        document.querySelector("#display--board").appendChild(box);
     }
-    document.querySelector(".game").classList.add(`level-${(length-4)/4}`);
+    document.querySelector("#display--board").classList.add(`level-${(length-4)/4}`);
 }
 
 function init(){
 
-    document.querySelectorAll(".optionStart").forEach((option, i) => {
+    document.querySelectorAll(".menu__option").forEach((option, i) => {
         const length= 8 + (i*4);
         option.innerText= `${length} pares`;
         option.onclick= () => {
             document.querySelector(".container").classList.add("started");
-            document.querySelector(".container p").innerText= "";
+            document.querySelector("#display--info").innerText= "";
             drawCards(length);
         };
     });
