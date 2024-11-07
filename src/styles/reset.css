@@ -1,7 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    border: none;
     outline: none;
     box-sizing: border-box;
+    transition: .5s;
+}
+
+html{
     font-family: monospace;
+    text-align: center;
+    user-select: none;
 }

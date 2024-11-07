@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="./src/styles/index.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1 class="header__heading">Jogo da memória</h1>
-        <p id="display--info" class="header__info">Selecione o nível de dificuldade</p>
 
-        <div class="main__menu">
-            <div class="menu__option"></div>
-            <div class="menu__option"></div>
-            <div class="menu__option"></div>
-        </div>
+        <header class="header">
+            <h1 class="header__heading">Jogo da memória</h1>
+            <p id="display--info" class="header__info">Selecione o nível de dificuldade</p>
+        </header>
 
-        <div id="display--board" class="game__board"></div>
-        <button id="button--restart" class="game__restart">
-            RECOMEÇAR
-        </button>
-    </div>
+        <main class="main">
+            <div class="main__menu">
+                <div class="menu__option"></div>
+                <div class="menu__option"></div>
+                <div class="menu__option"></div>
+            </div>
+
+            <div class="main__game">
+                <div id="display--board" class="game__board"></div>
+                <button id="button--restart" class="game__restart">
+                    RECOMEÇAR
+                </button>
+            </div>
+        </main>
     
     <script src="./src/scripts/engine.js" defer></script>
 </body>
