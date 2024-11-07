@@ -1,0 +1,28 @@
+
+.game__restart{
+    display: none;
+    padding: 10px 20px;
+    width: 100%;
+    color: var(--white-1);
+    background-color: var(--green-1);
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    visibility: hidden;
+}
+
+.started .game__restart{
+    display: block;
+}
+
+.game__restart:hover{
+    color: var(--green-1);
+    background-color: var(--green-2);
+}
+
+.game__restart:focus{
+    background: var(--white-1);
+}

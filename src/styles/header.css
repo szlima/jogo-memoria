@@ -1,0 +1,12 @@
+
+.header__heading{
+    font-size: 3em;
+    color: var(--orange-1);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+.header__info{
+    color: var(--orange-2);
+}
