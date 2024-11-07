@@ -1,12 +1,18 @@
 
+.header{
+    color: var(--color-white-1);
+    letter-spacing: 3px;
+}
+
 .header__heading{
-    font-size: 3em;
-    color: var(--orange-1);
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
 .header__info{
-    color: var(--orange-2);
+    min-height: 1.5rem;
+    font-family: var(--font-info);
+    font-weight: 700;
+    text-transform: uppercase;
 }

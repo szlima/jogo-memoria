@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Rock+Salt&display=swap');
 :root{
     --black-1: #222;
     --black-2: #333;
@@ -10,4 +11,9 @@
     --green-5: #7DCB45;
     --orange-1: #FE2916;
     --orange-2: #FE5849;
+
+    --color-white-1: #fff;
+
+    --font-heading: "Rock Salt", cursive;
+    --font-info: "Poppins", sans-serif;
 }
