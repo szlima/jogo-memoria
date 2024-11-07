@@ -1,2 +1,6 @@
 @import url("./menu.css");
 @import url("./game.css");
+
+.main{
+    width: 100%;
+}

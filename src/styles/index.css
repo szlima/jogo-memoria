@@ -9,7 +9,7 @@ body{
     padding: 1rem;
     margin: 0 auto;
 
-    background-color: var(--green-1);
+    background-color: var(--color-purple-1);
 
     display: flex;
     flex-direction: column;

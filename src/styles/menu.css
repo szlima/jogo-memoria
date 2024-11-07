@@ -1,9 +1,7 @@
 
 .main__menu{
     display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 2rem;
 }
 
 .started .main__menu{
@@ -11,32 +9,30 @@
 }
 
 .menu__option{
-    width: 200px;
-    height: 200px;
-    background-color: var(--green-3);
-    color: var(--black-1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
+    padding: 3rem 0;
+    background-color: var(--color-brown-1);
+    color: var(--color-white-1);
+    border: 1rem solid var(--color-brown-2);
+    box-shadow: inset .2rem .2rem 0 0 var(--color-white-2),
+        .5rem .5rem 0 0 var(--color-brown-3);
+
+    flex: 1;
+    font-family: var(--font-menu);
+    font-size: 4rem;
 }
 
 .menu__option:hover{
-    background-color: var(--green-4);
-    color: var(--black-2);
+    background-color: var(--color-purple-3);
     cursor: pointer;
 }
 
-@media only screen and (max-width: 960px){
-    .menu__option{
-        width: 150px;
-        height: 100px;
-    }
+.menu__option:active{
+    background-color: var(--color-white-2);
+    color: var(--color-purple-3);
 }
 
-@media only screen and (max-width: 960px) and (orientation: portrait){
+@media only screen and (orientation: portrait){
     .main__menu{
         flex-direction: column;
-        gap: 10px;
     }
 }

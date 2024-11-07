@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Rock+Salt&family=Squada+One&display=swap');
+
 :root{
-    --black-1: #222;
-    --black-2: #333;
     --white-1: #FFF;
     --white-2: #E3E3E3;
     --green-1: #213F0B;
     --green-2: #D9F8C3;
-    --green-3: yellowgreen;
-    --green-4: greenyellow;
     --green-5: #7DCB45;
     --orange-1: #FE2916;
     --orange-2: #FE5849;
 
     --color-white-1: #fff;
+    --color-white-2: #f3ebbf;
+    --color-brown-1: #f08656;
+    --color-brown-2: #d35b24;
+    --color-brown-3: #9e441ab9;
+    --color-purple-1: #19001e;
+    --color-purple-3: #be385d;
 
     --font-heading: "Rock Salt", cursive;
     --font-info: "Poppins", sans-serif;
+    --font-menu: "Squada One", sans-serif;
 }
