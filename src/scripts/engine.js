@@ -40,7 +40,7 @@ const endGame= () => {
     const endTime= getCurrentTime();
     const gameDuration= getGameDuration(endTime);
 
-    body.classList.add('gameOver');
+    body.classList.add('game-over');
     displayInfo.innerText= `Você demorou ${gameDuration}!`;
     buttonRestart.innerText= 'Jogar novamente';
 };

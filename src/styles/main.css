@@ -16,4 +16,10 @@
         border: .5rem solid var(--color-yellow-1);
         box-shadow: 1rem 1rem 0 0 var(--color-brown-4);
     }
+
+    .game-over .main{
+        background: var(--background-over);
+        border-color: var(--color-yellow-2);
+        box-shadow: 1rem 1rem 0 0 var(--color-yellow-2);
+    }
 }

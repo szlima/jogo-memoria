@@ -15,6 +15,12 @@
     cursor: pointer;
 }
 
+.game-over .game__restart{
+    color: var(--color-yellow-3);
+    border-color: var(--color-yellow-3);
+    box-shadow: .5rem .5rem 0 0 var(--color-yellow-3);
+}
+
 .game__restart:hover{
     background-color: var(--color-white-3);
 }

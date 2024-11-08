@@ -54,8 +54,17 @@
     cursor: not-allowed;
 }
 
-.gameOver .board__card--match{
-    border: 2px solid var(--white-1);
+.game-over .board__card::before{
+    content: '';
+    background-color: var(--color-white-4);
+
+    position: absolute;
+    inset: 0;
+}
+
+.game-over .board__card--match{
+    border-color: var(--color-yellow-2);
+    box-shadow: .5rem .5rem 0 0 var(--color-yellow-2);
 }
 
 @media only screen and (orientation: landscape){

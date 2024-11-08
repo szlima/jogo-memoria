@@ -22,11 +22,8 @@ body{
     background: var(--background-started);
 }
 
-.gameOver{
-    transform: rotateY(720deg);
-    -moz-transform: rotateY(720deg);
-    box-shadow: inset 0 0 20px 10px var(--white-1),
-        0 0 30px 20px var(--white-1);
+.game-over{
+    background: var(--background-over);
 }
 
 @media only screen and (min-width: 900px){
@@ -38,5 +35,9 @@ body{
 
     .game-started{
         background: var(--background-default);
+    }
+
+    .game-over{
+        background: var(--color-yellow-3);
     }
 }
