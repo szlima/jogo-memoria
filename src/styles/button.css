@@ -1,28 +1,24 @@
 
 .game__restart{
-    display: none;
-    padding: 10px 20px;
-    width: 100%;
-    color: var(--white-1);
-    background-color: var(--green-1);
-    border: none;
-    font-size: 1.5em;
+    padding: 1rem 2rem;
+
+    background-color: var(--color-white-1);
+    color: var(--color-purple-2);
+    border: .2rem solid var(--color-purple-2);
+    box-shadow: .5rem .5rem 0 0 var(--color-purple-2);
+
+    font-family: var(--font-default);
+    font-size: 1.5rem;
+    font-weight: 600;
     letter-spacing: .1em;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 600;
-    visibility: hidden;
-}
-
-.started .game__restart{
-    display: block;
 }
 
 .game__restart:hover{
-    color: var(--green-1);
-    background-color: var(--green-2);
+    background-color: var(--color-white-3);
 }
 
-.game__restart:focus{
-    background: var(--white-1);
+.game__restart--hidden{
+    visibility: hidden;
 }

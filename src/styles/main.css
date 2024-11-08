@@ -4,3 +4,16 @@
 .main{
     width: 100%;
 }
+
+.game-started .main{
+    height: 90%;
+}
+
+@media only screen and (min-width: 900px){
+    .game-started .main{
+        padding: 2rem;
+        background: var(--background-started);
+        border: .5rem solid var(--color-yellow-1);
+        box-shadow: 1rem 1rem 0 0 var(--color-brown-4);
+    }
+}

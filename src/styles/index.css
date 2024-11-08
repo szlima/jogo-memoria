@@ -4,17 +4,22 @@
 @import url("./main.css");
 
 body{
-    width: 100vw;
-    min-height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
+    min-height: 100dvh;
     padding: 1rem;
     margin: 0 auto;
 
-    background-color: var(--color-purple-1);
+    background: var(--background-default);
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.game-started{
+    background: var(--background-started);
 }
 
 .gameOver{
@@ -24,17 +29,14 @@ body{
         0 0 30px 20px var(--white-1);
 }
 
-.started{
-    background: linear-gradient(
-        325deg,
-        var(--white-1) 0%, var(--green-5)  30%,
-        var(--white-1) 100%
-    );
-}
-
 @media only screen and (min-width: 900px){
     body{
         width: 900px;
         padding: 3rem;
+        gap: 2rem;
+    }
+
+    .game-started{
+        background: var(--background-default);
     }
 }

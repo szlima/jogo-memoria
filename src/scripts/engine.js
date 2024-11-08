@@ -22,38 +22,42 @@ buttonRestart.onclick= () => location.reload();
 
 const getCurrentTime= () => (new Date()).getTime();
 
-const endGame= () => {
-    const gameEndTime= getCurrentTime();
+const getGameDuration= gameEndTime => {
     const diffTime= gameEndTime - gameStartTime;
 
     const seconds= 1000;
     const minutes= seconds * 60;
     const hours= minutes * 60;
 
-    const gameDuration= Math.round(diffTime/hours) > 0 ?
+    return Math.round(diffTime/hours) > 0 ?
         `mais de 1 hora` :
         Math.round(diffTime/minutes) > 0 ?
             `${Math.round(diffTime/minutes)} minutos` :
             `${Math.round(diffTime/seconds)} segundos`;
+};
+
+const endGame= () => {
+    const endTime= getCurrentTime();
+    const gameDuration= getGameDuration(endTime);
 
     body.classList.add('gameOver');
     displayInfo.innerText= `Você demorou ${gameDuration}!`;
-    buttonRestart.innerText= 'JOGAR NOVAMENTE';
+    buttonRestart.innerText= 'Jogar novamente';
 };
 
 const areAllCardsFlipped= () => {
-    const displayMatchedCards= document.querySelectorAll('.boxMatch');
+    const displayMatchedCards= document.querySelectorAll('.board__card--match');
     return (displayMatchedCards.length === cardArray.length);
 };
 
 const cancelCurrentPair= (cardOne, cardTwo) => {
-    cardOne.classList.remove('boxOpen');
-    cardTwo.classList.remove('boxOpen');
+    cardOne.classList.remove('board__card--open');
+    cardTwo.classList.remove('board__card--open');
 }
 
 const keepCurrentPair= (cardOne, cardTwo) => {
-    cardOne.classList.add('boxMatch');
-    cardTwo.classList.add('boxMatch');
+    cardOne.classList.add('board__card--match');
+    cardTwo.classList.add('board__card--match');
 }
 
 const checkMatch= () => {
@@ -79,14 +83,14 @@ const flipCard= e => {
 
     if(!gameStartTime){
         gameStartTime= getCurrentTime();
-        buttonRestart.style.visibility= 'visible';
+        buttonRestart.classList.remove('game__restart--hidden');
     }
 
-    if(card.classList.contains('boxOpen'))
+    if(card.classList.contains('board__card--open'))
         return;
 
     if(canFlipCard()){
-        card.classList.add('boxOpen');
+        card.classList.add('board__card--open');
         currentCardPair.push(card);
     }
 
@@ -105,17 +109,17 @@ const drawCards= length => {
 
     cardArray.forEach(emoji => {
         let card= document.createElement('div');
-        card.classList.add('item');
+        card.classList.add('board__card');
         card.innerHTML= emoji;
         card.onclick= flipCard;
         displayBoard.appendChild(card);
     });
 
-    displayBoard.classList.add(`level-${(length-4)/4}`);
+    displayBoard.classList.add(`game__board--${length}`);
 };
 
 const startGame= length => {
-    body.classList.add('started');
+    body.classList.add('game-started');
     displayInfo.innerText= '';
     drawCards(length);
 };

@@ -2,22 +2,23 @@
 
 :root{
     --white-1: #FFF;
-    --white-2: #E3E3E3;
-    --green-1: #213F0B;
-    --green-2: #D9F8C3;
-    --green-5: #7DCB45;
-    --orange-1: #FE2916;
-    --orange-2: #FE5849;
 
     --color-white-1: #fff;
     --color-white-2: #f3ebbf;
+    --color-white-3: #ffffffaa;
+    --color-yellow-1: #ebd369;
     --color-brown-1: #f08656;
     --color-brown-2: #d35b24;
     --color-brown-3: #9e441ab9;
+    --color-brown-4: #cf6962;
     --color-purple-1: #19001e;
+    --color-purple-2: #6a226a;
     --color-purple-3: #be385d;
 
+    --background-default: var(--color-purple-1);
+    --background-started: linear-gradient(to right, var(--color-yellow-1), var(--color-brown-4));
+
+    --font-default: "Poppins", sans-serif;
     --font-heading: "Rock Salt", cursive;
-    --font-info: "Poppins", sans-serif;
     --font-menu: "Squada One", sans-serif;
 }
