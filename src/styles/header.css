@@ -4,6 +4,10 @@
     letter-spacing: 3px;
 }
 
+.game-started .header{
+    color: var(--color-purple-4);
+}
+
 .header__heading{
     font-family: var(--font-heading);
     font-size: 3rem;
@@ -15,4 +19,10 @@
     font-family: var(--font-default);
     font-weight: 700;
     text-transform: uppercase;
+}
+
+@media only screen and (min-width: 900px){
+    .game-started .header{
+        color: var(--color-white-1);
+    }
 }
